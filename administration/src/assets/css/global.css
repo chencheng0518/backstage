@@ -6,7 +6,28 @@ body,
     margin: 0;
     padding: 0;
 }
-img{
+
+img {
     width: 100%;
     height: 100%;
+}
+
+.el-card {
+    margin-top: 20px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* .el-input {
+    height: 45px !important;
+}
+
+.el-input {
+    height: 45px !important;
+}
+
+.el-button {
+    height: 45px !important;
+} */
+.el-table{
+    margin: 20px 0;
 }
