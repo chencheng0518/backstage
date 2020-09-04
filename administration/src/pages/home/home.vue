@@ -89,7 +89,7 @@ export default {
     if (this.$route.path === '/welcome') {
       this.Active = ''
     } else {
-      this.Active = window.sessionStorage.getItem('active')
+      this.Active = this.$route.fullPath
     }
   },
   methods: {
@@ -114,7 +114,6 @@ export default {
     // 激活选中二级菜单事件
     handleActive(active) {
       this.Active = active
-      window.sessionStorage.setItem('active', active)
     }
   },
   watch: {
