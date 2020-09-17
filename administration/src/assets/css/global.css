@@ -5,6 +5,7 @@ body,
     height: 100%;
     margin: 0;
     padding: 0;
+    width: 1500px;
 }
 
 img {
@@ -28,6 +29,6 @@ img {
 .el-button {
     height: 45px !important;
 } */
-.el-table{
+.el-table {
     margin: 20px 0;
 }

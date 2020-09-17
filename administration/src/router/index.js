@@ -11,6 +11,7 @@ import Roles from '../components/jurisdiction/roles.vue'
 import Orders from '../components/order/orders.vue'
 import User from '../components/user/user.vue'
 import Reports from '../components/Statistics/reports.vue'
+import AddItem from '../components/commodity/AddItem/AddItem.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -62,6 +63,10 @@ const routes = [
       {
         path: '/reports',
         component: Reports
+      },
+      {
+        path: '/addItem',
+        component: AddItem
       }
     ]
   }
