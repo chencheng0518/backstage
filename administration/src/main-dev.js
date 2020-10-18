@@ -16,15 +16,29 @@ import VueQuillEditor from 'vue-quill-editor'
 import 'quill/dist/quill.core.css' // import styles
 import 'quill/dist/quill.snow.css' // for snow theme
 import 'quill/dist/quill.bubble.css' // for bubble theme
+
+// 引入 NProgress 包对应的JS和CSS
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
+
 // 配置请求的根路径
 axios.defaults.baseURL = 'http://server.sineava.top/api/private/v1/'
 // axios请求拦截器，会在发起axios请求时触发
 axios.interceptors.request.use(config => {
+  // 在request拦截器中，展示进度条 NProgress.start()
+  NProgress.start()
   // 为请求头对象，添加token验证的 Authorization 字段
   config.headers.Authorization = window.sessionStorage.getItem('token')
   // 最后必须 return config
   return config
 })
+
+// 在response 拦截器中，隐藏进度条  NProgress.done()
+axios.interceptors.response.use(config => {
+  NProgress.done()
+  return config
+})
+
 Vue.component('tree-table', TreeTable)
 Vue.prototype.$http = axios
 Vue.config.productionTip = false

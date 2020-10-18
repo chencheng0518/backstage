@@ -370,7 +370,6 @@ export default {
             attr_sel: this.activeName
           }
         )
-        console.log(res)
         if (res.meta.status !== 201) {
           this.dialogVisibleParams = false
           return this.$message.error('添加参数失败！')

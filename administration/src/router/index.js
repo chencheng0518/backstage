@@ -1,17 +1,29 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Login from '../pages/login/login.vue'
-import Home from '../pages/home/home.vue'
-import Welcome from '../components/welcome.vue'
-import Categories from '../components/commodity/categories.vue'
-import Goods from '../components/commodity/goods.vue'
-import Params from '../components/commodity/params.vue'
-import Rights from '../components/jurisdiction/rights.vue'
-import Roles from '../components/jurisdiction/roles.vue'
-import Orders from '../components/order/orders.vue'
-import User from '../components/user/user.vue'
-import Reports from '../components/Statistics/reports.vue'
-import AddItem from '../components/commodity/AddItem/AddItem.vue'
+// 路由懒加载
+const Login = () => import(/* webpackChunkName: "login-home-welcome" */'../pages/login/login.vue')
+const Home = () => import(/* webpackChunkName: "login-home-welcome" */'../pages/home/home.vue')
+const Welcome = () => import(/* webpackChunkName: "login-home-welcome" */'../components/welcome.vue')
+
+// 商品管理
+const Categories = () => import(/* webpackChunkName: "categories-goods-params-AddItem" */'../components/commodity/categories.vue')
+const Goods = () => import(/* webpackChunkName: "categories-goods-params-AddItem" */'../components/commodity/goods.vue')
+const Params = () => import(/* webpackChunkName: "categories-goods-params-AddItem" */'../components/commodity/params.vue')
+const AddItem = () => import(/* webpackChunkName: "categories-goods-params-AddItem" */'../components/commodity/AddItem/AddItem.vue')
+
+// 权限管理
+const Rights = () => import(/* webpackChunkName: "jurisdiction" */'../components/jurisdiction/rights.vue')
+const Roles = () => import(/* webpackChunkName: "jurisdiction" */'../components/jurisdiction/roles.vue')
+
+// 订单管理
+const Orders = () => import(/* webpackChunkName: "order" */'../components/order/orders.vue')
+
+// 用户管理
+const User = () => import(/* webpackChunkName: "user" */'../components/user/user.vue')
+
+// 数据统计
+const Reports = () => import(/* webpackChunkName: "reports" */'../components/Statistics/reports.vue')
+
 Vue.use(VueRouter)
 
 const routes = [
